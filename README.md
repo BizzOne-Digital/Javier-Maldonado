@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Javier Maldonado Real Estate
+
+Production-quality multilingual real estate website and admin portal for **Javier Maldonado**, REALTOR® with **Avila Realty Group Inc., Brokerage**.
+
+**Domain:** https://javiermaldonado.ca
+
+This is a single Next.js full-stack application (frontend + API routes + MongoDB) — not separate frontend/backend folders.
+
+## Tech Stack
+
+- **Next.js 16** (App Router, TypeScript)
+- **Tailwind CSS 4** with brand palette (midnight navy, lake blue, warm copper)
+- **Framer Motion**, **GSAP**, **Lenis** for cinematic animations
+- **next-intl** — English (`/en`) and Spanish (`/es`)
+- **MongoDB Atlas** + **Mongoose**
+- **JWT** auth with HTTP-only cookies
+- **Cloudinary** for image/PDF uploads
+- **Nodemailer** for lead/booking emails
+- **React Hook Form** + **Zod**
+- **TanStack Query**
+- **Vitest** for calculator unit tests
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure environment
+
+Copy `.env.example` to `.env.local` and fill in:
+
+- `MONGODB_URI` — MongoDB Atlas connection string
+- `JWT_SECRET` — strong random secret
+- `ADMIN_EMAIL` / `ADMIN_PASSWORD` — for seeding admin user
+- `CLOUDINARY_*` — Cloudinary credentials
+- `SMTP_*` — email server settings
+- `FRONTEND_URL` — e.g. `http://localhost:3000`
+
+### 3. Seed admin user
+
+```bash
+npm run seed:admin
+```
+
+### 4. Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Admin portal: [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | ESLint |
+| `npm run test` | Run calculator unit tests |
+| `npm run seed:admin` | Create admin user from env vars |
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+javiermaldonado/
+├── src/
+│   ├── app/
+│   │   ├── [locale]/          # Public pages (en/es)
+│   │   ├── admin/             # Admin portal
+│   │   └── api/               # Backend API routes
+│   ├── components/            # UI components
+│   ├── config/                # Site config & calculator rules
+│   ├── lib/                   # DB, auth, email, utilities
+│   ├── models/                # Mongoose models
+│   └── i18n/                  # next-intl routing
+├── messages/                  # en.json, es.json translations
+├── public/                    # logo.png, static assets
+└── scripts/                   # seed-admin.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+### Public Website
+- Cinematic intro experience (once per session)
+- 20+ pages in English and Spanish
+- Property listings (admin-managed, no MLS scraping)
+- 5 financial calculators with date-stamped rules
+- Lead forms (buyer, seller, rental, investor, home value)
+- Gated resource downloads
+- Multi-step consultation booking
+- Blog, testimonials, team (CMS-managed)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Admin Portal (`/admin`)
+- Dashboard with stats
+- Listings, leads, bookings CRUD
+- Testimonials, blog, team, resources, services
+- Cloudinary image/PDF uploads
+- CSV lead export
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Spanish Content Note
+
+> **Important:** Spanish translations in `messages/es.json` and admin-managed Spanish content should be reviewed by a fluent Spanish speaker before production launch.
+
+## Calculator Rules
+
+Calculator configurations include `effectiveDate` and official source URLs:
+
+- CMHC: `src/config/calculators/cmhc.ts`
+- Land Transfer Tax: `src/config/calculators/landTransferTax.ts`
+
+Verify current government rates before launch.
+
+## Deployment
+
+1. Set all environment variables on your hosting platform (Vercel, Railway, etc.)
+2. Connect MongoDB Atlas
+3. Configure Cloudinary and SMTP
+4. Run `npm run build`
+5. Run `npm run seed:admin` once
+6. Deploy
+
+## Brokerage Attribution
+
+All pages display **Avila Realty Group Inc., Brokerage** attribution. Replace the brokerage logo placeholder on the Contact page and footer when the official logo is supplied.
+
+## License
+
+Private — © Javier Maldonado Real Estate

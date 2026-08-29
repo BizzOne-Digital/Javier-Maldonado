@@ -1,0 +1,383 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "buy": "Comprar",
+    "sell": "Vender",
+    "rent": "Alquilar",
+    "invest": "Invertir",
+    "listings": "Propiedades",
+    "calculators": "Calculadoras",
+    "resources": "Recursos",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "team": "Nuestro Equipo",
+    "blog": "Blog",
+    "areas": "Áreas de Servicio",
+    "booking": "Reservar Consulta",
+    "testimonials": "Testimonios"
+  },
+  "hero": {
+    "eyebrow": "BIENES RAÍCES GTA • GUÍA PERSONALIZADA",
+    "headline": "Su Próximo Paso, Con Confianza.",
+    "subheadline": "Ya sea que esté comprando su primera casa, planificando su próximo movimiento o construyendo un portafolio inmobiliario, reciba orientación clara y personalizada en el Área Metropolitana de Toronto.",
+    "ctaPrimary": "Comience Su Camino Hacia Casa",
+    "ctaSecondary": "Reservar Consulta",
+    "ctaTertiary": "Explorar Propiedades GTA"
+  },
+  "search": {
+    "title": "¿A dónde le gustaría mudarse?",
+    "location": "Ubicación",
+    "propertyType": "Tipo de Propiedad",
+    "priceRange": "Rango de Precio",
+    "search": "Buscar"
+  },
+  "trust": {
+    "buying": "Comprar",
+    "selling": "Vender",
+    "renting": "Alquilar",
+    "investing": "Invertir",
+    "guidance": "Orientación del Mercado GTA"
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "viewDetails": "Ver Detalles",
+    "requestShowing": "Solicitar Visita",
+    "callNow": "Llamar Ahora",
+    "emailUs": "Enviar Email",
+    "submit": "Enviar",
+    "consent": "Consiento ser contactado sobre mi consulta.",
+    "loading": "Cargando...",
+    "error": "Algo salió mal. Por favor intente de nuevo.",
+    "success": "Gracias por contactar a Javier Maldonado Real Estate.",
+    "disclaimer": "Los resultados son estimaciones con fines informativos generales y no constituyen asesoramiento financiero, hipotecario, legal o fiscal. Las reglas y tasas pueden cambiar. Confirme todos los montos con profesionales calificados y fuentes oficiales.",
+    "emptyListings": "Nuevas oportunidades están en preparación. Contacte a Javier para propiedades actuales en el GTA.",
+    "emptyTestimonials": "Las historias de clientes aparecerán aquí cuando se compartan.",
+    "bookingNote": "Su consulta no está confirmada hasta que Javier o el equipo de la correduría se comunique con usted.",
+    "homeValueConfirm": "Gracias. Javier revisará la información de la propiedad y se comunicará con usted para discutir una evaluación personalizada del mercado."
+  },
+  "footer": {
+    "brokerage": "Avila Realty Group Inc., Brokerage",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos y Descargo"
+  },
+  "intro": {
+    "name": "Javier Maldonado",
+    "tagline": "Bienes Raíces GTA",
+    "skip": "Saltar Intro"
+  },
+  "home": {
+    "firstTimeBuyer": {
+      "heading": "Su Primera Casa Debería Ser Emocionante—No Abrumadora.",
+      "cta": "Descargar Guía del Comprador"
+    },
+    "seller": {
+      "heading": "Conozca la Posición de Su Casa en el Mercado Actual.",
+      "cta": "Estimar el Valor de Mi Casa"
+    },
+    "finalCta": {
+      "heading": "Planifiquemos Su Próximo Paso."
+    }
+  },
+  "contact": {
+    "title": "Contactar a Javier Maldonado",
+    "subtitle": "Comuníquese para orientación personalizada en bienes raíces del GTA."
+  },
+  "meta": {
+    "siteTitle": "Javier Maldonado Real Estate | REALTOR® GTA",
+    "siteDescription": "Orientación personalizada en bienes raíces en el Área Metropolitana de Toronto. Compre, venda, alquile e invierta con Javier Maldonado."
+  },
+  "pages": {
+    "about": {
+      "metaTitle": "Acerca de Javier Maldonado",
+      "metaDescription": "Conozca a Javier Maldonado, profesional inmobiliario del GTA que ofrece orientación personalizada para compradores, vendedores, inquilinos e inversionistas.",
+      "eyebrow": "Acerca de",
+      "title": "Orientación Personal para Cada Paso en el GTA",
+      "subtitle": "Javier Maldonado ofrece apoyo inmobiliario claro y bilingüe en Etobicoke, Mississauga, Milton, Brampton y Oakville.",
+      "storyTitle": "Un Enfoque Centrado en Relaciones",
+      "storySubtitle": "Las decisiones inmobiliarias son personales. Javier se enfoca en escuchar primero y luego construir un plan que se ajuste a sus metas, plazos y nivel de comodidad.",
+      "storyBody": "Ya sea que esté comprando su primera casa, preparándose para vender, buscando un alquiler o evaluando una propiedad de inversión, recibirá orientación directa sin presión. Javier trabaja con Avila Realty Group Inc., Brokerage y atiende clientes en todo el GTA en inglés y español.",
+      "valuesEyebrow": "Cómo Trabajamos",
+      "valuesTitle": "Principios Que Guían a Cada Cliente",
+      "values": [
+        "Comunicación clara en cada etapa del proceso",
+        "Conocimiento del mercado local en comunidades clave del GTA",
+        "Apoyo bilingüe en inglés y español",
+        "Orientación honesta adaptada a sus prioridades"
+      ],
+      "ctaTitle": "¿Listo para Iniciar una Conversación?",
+      "ctaSubtitle": "Reserve una consulta o envíe un mensaje para hablar de su próximo paso."
+    },
+    "buy": {
+      "metaTitle": "Comprar una Casa en el GTA",
+      "metaDescription": "Orientación para compradores en el Área Metropolitana de Toronto con conocimiento de vecindarios, visitas y estrategia de ofertas con Javier Maldonado.",
+      "eyebrow": "Comprar",
+      "title": "Encuentre la Casa Adecuada con Confianza",
+      "subtitle": "Desde compradores primerizos hasta compradores experimentados, reciba apoyo estructurado en la búsqueda, preparación financiera y cierre.",
+      "approachEyebrow": "Servicios para Compradores",
+      "approachTitle": "Orientación Basada en Sus Metas",
+      "approachSubtitle": "Comprenda vecindarios, compare propiedades y avance con un plan claro.",
+      "highlights": [
+        "Búsqueda de vecindarios y propiedades en áreas de servicio del GTA",
+        "Coordinación de visitas y diligencia debida",
+        "Estrategia de ofertas y apoyo en negociación",
+        "Conexiones con profesionales hipotecarios y legales según sea necesario"
+      ],
+      "processTitle": "Su Camino de Compra",
+      "steps": [
+        "Discuta su presupuesto, plazo y requisitos esenciales",
+        "Visite propiedades y refine su lista corta",
+        "Prepare y presente una oferta competitiva",
+        "Complete condiciones y cierre con confianza"
+      ],
+      "formEyebrow": "Comenzar",
+      "formTitle": "Cuéntenos Sobre Su Búsqueda",
+      "formSubtitle": "Comparta algunos detalles y Javier se comunicará para discutir los próximos pasos.",
+      "ctaPrimary": "Reservar Consulta de Compra",
+      "ctaSecondary": "Contactar a Javier"
+    },
+    "sell": {
+      "metaTitle": "Vender Su Casa en el GTA",
+      "metaDescription": "Apoyo para vendedores incluyendo conversaciones de precio, preparación de marketing y orientación en negociación con Javier Maldonado.",
+      "eyebrow": "Vender",
+      "title": "Posicione Su Casa en el Mercado Actual",
+      "subtitle": "Reciba orientación reflexiva sobre precios, presentación y el proceso de venta desde el listado hasta el cierre.",
+      "approachEyebrow": "Servicios para Vendedores",
+      "approachTitle": "Un Plan Claro para Listar y Vender",
+      "approachSubtitle": "Comprenda sus opciones y prepare su propiedad con intención.",
+      "highlights": [
+        "Revisión del mercado y conversación de precios",
+        "Preparación del listado y coordinación de marketing",
+        "Gestión de visitas y retroalimentación de compradores",
+        "Revisión de ofertas y apoyo en negociación"
+      ],
+      "processTitle": "Su Camino de Venta",
+      "steps": [
+        "Revise detalles de la propiedad y contexto del mercado local",
+        "Prepare la casa y lance el listado",
+        "Organice visitas y evalúe el interés",
+        "Negocie ofertas y complete la venta"
+      ],
+      "formEyebrow": "Comenzar",
+      "formTitle": "Solicite una Consulta de Venta",
+      "formSubtitle": "Comparta los detalles de su propiedad para iniciar una conversación personalizada.",
+      "ctaPrimary": "Reservar Consulta de Venta",
+      "ctaSecondary": "Contactar a Javier"
+    },
+    "rent": {
+      "metaTitle": "Alquilar en el GTA",
+      "metaDescription": "Apoyo en búsqueda de alquiler para inquilinos en el Área Metropolitana de Toronto con Javier Maldonado.",
+      "eyebrow": "Alquilar",
+      "title": "Encuentre un Alquiler que Se Ajuste a Su Estilo de Vida",
+      "subtitle": "Ya sea que se esté reubicando o buscando mejorar, reciba ayuda para navegar opciones y solicitudes de alquiler en el GTA.",
+      "approachEyebrow": "Servicios de Alquiler",
+      "approachTitle": "Apoyo para Inquilinos",
+      "approachSubtitle": "Busque eficientemente y comprenda cada paso del proceso de alquiler.",
+      "highlights": [
+        "Búsqueda de alquiler en comunidades clave del GTA",
+        "Orientación sobre solicitudes y documentación",
+        "Coordinación de visitas y seguimiento",
+        "Comunicación clara durante su mudanza"
+      ],
+      "processTitle": "Su Camino de Alquiler",
+      "steps": [
+        "Defina presupuesto, ubicación y fecha de mudanza",
+        "Visite opciones de alquiler adecuadas",
+        "Prepare y envíe solicitudes",
+        "Finalice detalles del contrato y múdese"
+      ],
+      "formEyebrow": "Comenzar",
+      "formTitle": "Comparta Sus Necesidades de Alquiler",
+      "formSubtitle": "Cuéntenos qué busca y nos comunicaremos con usted.",
+      "ctaPrimary": "Reservar Consulta",
+      "ctaSecondary": "Contactar a Javier"
+    },
+    "invest": {
+      "metaTitle": "Inversión Inmobiliaria en el GTA",
+      "metaDescription": "Orientación sobre propiedades de inversión en el Área Metropolitana de Toronto con contexto de mercado y apoyo en adquisición.",
+      "eyebrow": "Invertir",
+      "title": "Construya Su Estrategia Inmobiliaria",
+      "subtitle": "Explore oportunidades de inversión con orientación estructurada sobre contexto de mercado, evaluación de propiedades y próximos pasos.",
+      "approachEyebrow": "Servicios para Inversionistas",
+      "approachTitle": "Planificación Reflexiva de Portafolio",
+      "approachSubtitle": "Evalúe oportunidades con claridad antes de comprometer capital.",
+      "highlights": [
+        "Búsqueda y evaluación de propiedades de inversión",
+        "Discusión de flujo de caja, financiamiento y estrategia de tenencia",
+        "Coordinación para diligencia debida y cierre",
+        "Conversaciones de planificación a largo plazo a medida que evolucionan sus metas"
+      ],
+      "processTitle": "Su Camino de Inversión",
+      "steps": [
+        "Aclare metas y criterios de inversión",
+        "Revise propiedades adecuadas y datos de mercado",
+        "Analice números y opciones de financiamiento",
+        "Adquiera y planifique la propiedad continua"
+      ],
+      "formEyebrow": "Comenzar",
+      "formTitle": "Discuta Sus Metas de Inversión",
+      "formSubtitle": "Comparta sus objetivos para iniciar una conversación personalizada.",
+      "ctaPrimary": "Reservar Consulta de Inversión",
+      "ctaSecondary": "Contactar a Javier"
+    },
+    "listings": {
+      "metaTitle": "Propiedades en el GTA",
+      "metaDescription": "Explore propiedades actuales en el Área Metropolitana de Toronto con Javier Maldonado Real Estate.",
+      "eyebrow": "Propiedades",
+      "title": "Explore Propiedades del GTA",
+      "subtitle": "Navegue hogares disponibles y conéctese con Javier para programar una visita o obtener más información."
+    },
+    "listingDetail": {
+      "metaTitle": "Detalles de la Propiedad",
+      "metaDescription": "Vea detalles de la propiedad, características y solicite una visita con Javier Maldonado.",
+      "features": "Características",
+      "details": "Detalles de la Propiedad",
+      "propertyType": "Tipo de Propiedad",
+      "bedrooms": "Habitaciones",
+      "bathrooms": "Baños",
+      "squareFootage": "Metros Cuadrados",
+      "parking": "Estacionamiento",
+      "mls": "MLS®",
+      "notFound": "Propiedad No Encontrada",
+      "notFoundBody": "Esta propiedad puede ya no estar disponible. Explore listados actuales o contacte a Javier para asistencia."
+    },
+    "areas": {
+      "metaTitle": "Áreas de Servicio del GTA",
+      "metaDescription": "Javier Maldonado atiende compradores, vendedores, inquilinos e inversionistas en Etobicoke, Mississauga, Milton, Brampton y Oakville.",
+      "eyebrow": "Áreas de Servicio",
+      "title": "Comunidades Que Servimos",
+      "subtitle": "Conocimiento local en mercados clave del Área Metropolitana de Toronto.",
+      "cta": "Ver Propiedades en {city}"
+    },
+    "calculators": {
+      "metaTitle": "Calculadoras Inmobiliarias",
+      "metaDescription": "Herramientas de hipoteca, compra, CMHC, impuesto de transferencia y valor de hogar para compradores y vendedores del GTA.",
+      "eyebrow": "Calculadoras",
+      "title": "Planifique con Números Claros",
+      "subtitle": "Explore herramientas interactivas para estimar pagos, costos de cierre y más. Los resultados son solo estimaciones.",
+      "mortgageTitle": "Calculadora de Hipoteca",
+      "purchaseTitle": "Calculadora de Compra",
+      "cmhcTitle": "Seguro CMHC",
+      "landTransferTitle": "Impuesto de Transferencia",
+      "homeWorthTitle": "Valor de su Hogar",
+      "mortgageDesc": "Estime pagos hipotecarios mensuales y costos totales de mantenimiento.",
+      "purchaseDesc": "Revise costos relacionados con la compra en un solo lugar.",
+      "cmhcDesc": "Estime primas de seguro hipotecario CMHC.",
+      "landTransferDesc": "Calcule estimaciones del impuesto de transferencia de Ontario.",
+      "homeWorthDesc": "Solicite una conversación personalizada sobre el valor de su hogar."
+    },
+    "mortgageCalc": {
+      "metaTitle": "Calculadora de Hipoteca",
+      "metaDescription": "Estime pagos hipotecarios del GTA incluyendo impuestos y tarifas."
+    },
+    "purchaseCalc": {
+      "metaTitle": "Calculadora de Compra",
+      "metaDescription": "Estime costos totales de compra de una propiedad en el GTA."
+    },
+    "cmhcCalc": {
+      "metaTitle": "Calculadora de Seguro CMHC",
+      "metaDescription": "Estime el seguro hipotecario CMHC para compradores canadienses."
+    },
+    "landTransferCalc": {
+      "metaTitle": "Calculadora de Impuesto de Transferencia",
+      "metaDescription": "Estime el impuesto de transferencia de Ontario en una compra de propiedad."
+    },
+    "homeWorthCalc": {
+      "metaTitle": "Solicitud de Valor de Hogar",
+      "metaDescription": "Solicite una conversación personalizada de mercado sobre el valor de su hogar."
+    },
+    "resources": {
+      "metaTitle": "Recursos y Guías",
+      "metaDescription": "Guías y recursos descargables para compradores, vendedores e inversionistas del GTA.",
+      "eyebrow": "Recursos",
+      "title": "Guías para Su Próximo Paso",
+      "subtitle": "Recursos prácticos para ayudarle a prepararse para comprar, vender o invertir.",
+      "empty": "Los recursos se publicarán aquí cuando estén disponibles.",
+      "download": "Solicitar Descarga"
+    },
+    "testimonials": {
+      "metaTitle": "Testimonios de Clientes",
+      "metaDescription": "Lea lo que los clientes comparten sobre trabajar con Javier Maldonado Real Estate."
+    },
+    "booking": {
+      "metaTitle": "Reservar Consulta",
+      "metaDescription": "Programe una consulta con Javier Maldonado para orientación inmobiliaria personalizada en el GTA.",
+      "eyebrow": "Consulta",
+      "title": "Reserve Su Consulta Privada",
+      "subtitle": "Elija un horario que le funcione. Su cita se confirma cuando Javier o el equipo de la correduría se comunique con usted."
+    },
+    "blog": {
+      "metaTitle": "Blog Inmobiliario",
+      "metaDescription": "Perspectivas sobre bienes raíces del GTA, contexto de mercado y orientación útil de Javier Maldonado.",
+      "eyebrow": "Blog",
+      "title": "Perspectivas y Orientación",
+      "subtitle": "Artículos sobre comprar, vender, alquilar e invertir en el Área Metropolitana de Toronto.",
+      "empty": "Los artículos aparecerán aquí cuando se publiquen.",
+      "readMore": "Leer Artículo"
+    },
+    "blogDetail": {
+      "metaTitle": "Artículo del Blog",
+      "notFound": "Artículo No Encontrado",
+      "notFoundBody": "Este artículo puede haber sido eliminado o aún no está publicado."
+    },
+    "team": {
+      "metaTitle": "Nuestro Equipo",
+      "metaDescription": "Conozca a los profesionales que apoyan a los clientes de Javier Maldonado Real Estate.",
+      "eyebrow": "Equipo",
+      "title": "Personas Detrás de la Experiencia",
+      "subtitle": "Profesionales dedicados comprometidos con un servicio excepcional al cliente.",
+      "empty": "Los perfiles del equipo aparecerán aquí cuando se publiquen."
+    },
+    "contact": {
+      "metaTitle": "Contacto",
+      "metaDescription": "Contacte a Javier Maldonado para preguntas inmobiliarias del GTA, visitas y consultas."
+    },
+    "privacy": {
+      "metaTitle": "Política de Privacidad",
+      "metaDescription": "Política de privacidad de Javier Maldonado Real Estate.",
+      "eyebrow": "Legal",
+      "title": "Política de Privacidad",
+      "subtitle": "Cómo recopilamos, usamos y protegemos su información.",
+      "sections": [
+        {
+          "heading": "Información que Recopilamos",
+          "body": "Cuando envía un formulario, reserva una consulta o nos contacta, podemos recopilar su nombre, correo electrónico, teléfono, detalles de la propiedad y cualquier información que elija proporcionar en su mensaje."
+        },
+        {
+          "heading": "Cómo Usamos la Información",
+          "body": "Usamos su información para responder consultas, programar consultas, proporcionar servicios inmobiliarios y mejorar nuestras comunicaciones. No vendemos su información personal."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Para preguntas relacionadas con la privacidad, contacte a Javier Maldonado en jamaldonado@live.ca o llame al +1 (647) 638-4303."
+        }
+      ]
+    },
+    "terms": {
+      "metaTitle": "Términos y Descargo",
+      "metaDescription": "Términos de uso y descargo de responsabilidad de Javier Maldonado Real Estate.",
+      "eyebrow": "Legal",
+      "title": "Términos y Descargo",
+      "subtitle": "Información importante sobre el uso de este sitio web y sus herramientas.",
+      "sections": [
+        {
+          "heading": "Información General",
+          "body": "Este sitio web es operado por Javier Maldonado en afiliación con Avila Realty Group Inc., Brokerage. El contenido se proporciona con fines informativos generales y no constituye asesoramiento legal, financiero o fiscal."
+        },
+        {
+          "heading": "Estimaciones de Calculadoras",
+          "body": "Los resultados de las calculadoras son solo estimaciones. Las tasas, reglas y tarifas pueden cambiar. Confirme todas las cifras con profesionales calificados y fuentes oficiales antes de tomar decisiones."
+        },
+        {
+          "heading": "Información de Propiedades",
+          "body": "Los detalles de las propiedades se consideran precisos pero no están garantizados. Compradores y vendedores deben verificar toda la información de forma independiente."
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Página No Encontrada",
+      "subtitle": "La página que busca puede haberse movido o ya no existe.",
+      "cta": "Volver al Inicio"
+    }
+  }
+}
