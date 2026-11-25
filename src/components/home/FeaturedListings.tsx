@@ -3,7 +3,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
 import { useLocale } from "next-intl";
-import { Link } from "@/i18n/routing";
 import type { Listing } from "@/types/listing";
 import { useLabels } from "@/lib/labels";
 import { SectionHeading } from "@/components/ui/SectionHeading";

@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { testimonialSchema } from "@/lib/validations";
 import Testimonial from "@/models/Testimonial";
 
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
 
     await connectDB();
     const testimonial = await Testimonial.create(data);
+    revalidateSite();
     return apiSuccess(testimonial, 201);
   } catch (error) {
     return handleApiError(error);

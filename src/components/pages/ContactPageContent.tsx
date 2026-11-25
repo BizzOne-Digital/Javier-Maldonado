@@ -2,13 +2,14 @@
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { GradientCard } from "@/components/ui/GradientCard";
 
 export function ContactPageContent() {
+  const siteConfig = useSiteConfig();
   const contact = useTranslations("contact");
 
   return (

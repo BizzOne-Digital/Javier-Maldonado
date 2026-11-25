@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { GradientCard } from "@/components/ui/GradientCard";
@@ -12,6 +12,7 @@ interface LegalPageContentProps {
 }
 
 export function LegalPageContent({ namespace }: LegalPageContentProps) {
+  const siteConfig = useSiteConfig();
   const t = useTranslations(namespace);
   const sections = t.raw("sections") as { heading: string; body: string }[];
 

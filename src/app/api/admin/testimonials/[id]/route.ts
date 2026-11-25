@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, apiError, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, apiError, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { testimonialSchema } from "@/lib/validations";
 import Testimonial from "@/models/Testimonial";
 
@@ -48,6 +48,7 @@ export async function PUT(
       return apiError("Testimonial not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess(testimonial);
   } catch (error) {
     return handleApiError(error);
@@ -70,6 +71,7 @@ export async function DELETE(
       return apiError("Testimonial not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess({ message: "Testimonial deleted" });
   } catch (error) {
     return handleApiError(error);

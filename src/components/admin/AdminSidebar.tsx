@@ -13,6 +13,7 @@ import {
   Briefcase,
   Settings,
   ExternalLink,
+  FileText,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -24,6 +25,7 @@ const navItems = [
   { href: "/admin/testimonials", label: "Testimonials", icon: MessageSquare },
   { href: "/admin/team", label: "Team", icon: UsersRound },
   { href: "/admin/resources", label: "Resources", icon: FolderOpen },
+  { href: "/admin/content", label: "Site Content", icon: FileText },
   { href: "/admin/services", label: "Services", icon: Briefcase },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];

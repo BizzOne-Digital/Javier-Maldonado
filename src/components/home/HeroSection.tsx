@@ -1,12 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
+import { ContentImage as Image } from "@/components/ui/ContentImage";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Compass, MapPin } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig, useSiteImages } from "@/lib/site-context";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 
@@ -34,6 +34,8 @@ const priceRanges = [
 ];
 
 export function HeroSection() {
+  const siteConfig = useSiteConfig();
+  const images = useSiteImages();
   const locale = useLocale();
   const t = useTranslations("hero");
   const ts = useTranslations("search");
@@ -69,7 +71,7 @@ export function HeroSection() {
       {/* Background image — ss2 */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 min-h-full">
         <Image
-          src="/hero-bg.png"
+          src={images.heroBackground}
           alt="Luxury Toronto home at dusk with CN Tower skyline"
           fill
           priority

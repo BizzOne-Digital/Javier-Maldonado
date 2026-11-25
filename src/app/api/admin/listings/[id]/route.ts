@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, apiError, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, apiError, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { listingUpdateSchema } from "@/lib/validations";
 import Listing from "@/models/Listing";
 
@@ -26,6 +26,7 @@ export async function PUT(
       return apiError("Listing not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess(listing);
   } catch (error) {
     return handleApiError(error);
@@ -48,6 +49,7 @@ export async function DELETE(
       return apiError("Listing not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess({ message: "Listing deleted" });
   } catch (error) {
     return handleApiError(error);

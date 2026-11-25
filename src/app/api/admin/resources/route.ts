@@ -1,7 +1,7 @@
 import slugify from "slugify";
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, apiError, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, apiError, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { resourceSchema } from "@/lib/validations";
 import Resource from "@/models/Resource";
 
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
     }
 
     const resource = await Resource.create({ ...data, slug });
+    revalidateSite();
     return apiSuccess(resource, 201);
   } catch (error) {
     return handleApiError(error);

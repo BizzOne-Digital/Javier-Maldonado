@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useLocale } from "next-intl";
 import type { Listing, ListingFiltersState } from "@/types/listing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { useLabels } from "@/lib/labels";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -24,6 +24,7 @@ export function ListingFilters({
   onApply,
   listings,
 }: ListingFiltersProps) {
+  const siteConfig = useSiteConfig();
   const locale = useLocale();
   const t = useLabels(locale as "en" | "es");
   const cities = [...new Set([...siteConfig.serviceAreas, ...listings.map((l) => l.city)])];

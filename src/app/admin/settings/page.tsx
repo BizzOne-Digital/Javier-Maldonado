@@ -5,6 +5,8 @@ import { Save } from "lucide-react";
 import { adminFetch } from "@/lib/admin-fetch";
 import { siteConfig } from "@/config/site";
 import { inputClass, labelClass } from "@/components/admin/form-styles";
+import { LocalImageField } from "@/components/admin/LocalImageField";
+import { IMAGE_SLOTS } from "@/lib/site-content-shared";
 
 interface SettingsForm {
   phone: string;
@@ -20,6 +22,9 @@ interface SettingsForm {
   siteName: string;
   siteTitle: string;
   domain: string;
+  serviceAreas: string;
+  disclaimer: string;
+  images: Record<string, string>;
 }
 
 const defaultForm: SettingsForm = {
@@ -36,6 +41,9 @@ const defaultForm: SettingsForm = {
   siteName: siteConfig.name,
   siteTitle: siteConfig.title,
   domain: siteConfig.domain,
+  serviceAreas: siteConfig.serviceAreas.join(", "),
+  disclaimer: siteConfig.disclaimer,
+  images: {},
 };
 
 export default function AdminSettingsPage() {
@@ -63,6 +71,11 @@ export default function AdminSettingsPage() {
           siteName: String(s.site?.name ?? defaultForm.siteName),
           siteTitle: String(s.site?.title ?? defaultForm.siteTitle),
           domain: String(s.site?.domain ?? defaultForm.domain),
+          serviceAreas: Array.isArray(s.site?.serviceAreas)
+            ? (s.site.serviceAreas as string[]).join(", ")
+            : defaultForm.serviceAreas,
+          disclaimer: String(s.site?.disclaimer ?? defaultForm.disclaimer),
+          images: (s.images ?? {}) as Record<string, string>,
         });
       })
       .finally(() => setLoading(false));
@@ -95,7 +108,10 @@ export default function AdminSettingsPage() {
             name: form.siteName,
             title: form.siteTitle,
             domain: form.domain,
+            serviceAreas: form.serviceAreas.split(",").map((a) => a.trim()).filter(Boolean),
+            disclaimer: form.disclaimer,
           },
+          images: form.images,
         },
       }),
     });
@@ -137,7 +153,35 @@ export default function AdminSettingsPage() {
               <label className={labelClass}>Domain</label>
               <input className={inputClass} value={form.domain} onChange={(e) => setForm({ ...form, domain: e.target.value })} />
             </div>
+            <div className="md:col-span-2">
+              <label className={labelClass}>Service Areas (comma separated)</label>
+              <input className={inputClass} value={form.serviceAreas} onChange={(e) => setForm({ ...form, serviceAreas: e.target.value })} />
+            </div>
+            <div className="md:col-span-2">
+              <label className={labelClass}>Legal Disclaimer</label>
+              <textarea className={inputClass} rows={3} value={form.disclaimer} onChange={(e) => setForm({ ...form, disclaimer: e.target.value })} />
+            </div>
           </div>
+        </section>
+
+        <section className="rounded-xl border border-champagne/40 bg-white p-6 space-y-4">
+          <h2 className="font-display text-lg text-midnight border-b border-champagne/30 pb-3">
+            Site Images
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {IMAGE_SLOTS.map((slot) => (
+              <LocalImageField
+                key={slot.key}
+                label={slot.label}
+                folder="pages"
+                value={form.images[slot.key] ?? ""}
+                onChange={(url) =>
+                  setForm((prev) => ({ ...prev, images: { ...prev.images, [slot.key]: url } }))
+                }
+              />
+            ))}
+          </div>
+          <p className="text-xs text-midnight/50">Leave empty to use the default image.</p>
         </section>
 
         <section className="rounded-xl border border-champagne/40 bg-white p-6 space-y-4">

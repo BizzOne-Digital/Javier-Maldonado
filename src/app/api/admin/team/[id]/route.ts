@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, apiError, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, apiError, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { teamMemberSchema } from "@/lib/validations";
 import TeamMember from "@/models/TeamMember";
 
@@ -48,6 +48,7 @@ export async function PUT(
       return apiError("Team member not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess(member);
   } catch (error) {
     return handleApiError(error);
@@ -70,6 +71,7 @@ export async function DELETE(
       return apiError("Team member not found", 404);
     }
 
+    revalidateSite();
     return apiSuccess({ message: "Team member deleted" });
   } catch (error) {
     return handleApiError(error);

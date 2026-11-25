@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
 import { apiSuccess, handleApiError, sanitizeInput } from "@/lib/api-utils";
@@ -42,6 +43,8 @@ export async function PATCH(req: Request) {
         )
       )
     );
+
+    revalidatePath("/", "layout");
 
     const merged: Record<string, Record<string, unknown>> = {};
     for (const setting of updates) {

@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { GradientCard } from "@/components/ui/GradientCard";
 
 export function AreasPageContent() {
+  const siteConfig = useSiteConfig();
   const t = useTranslations("pages.areas");
 
   return (

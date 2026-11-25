@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { ContentImage as Image } from "@/components/ui/ContentImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { Menu, Phone, X } from "lucide-react";
@@ -11,7 +11,7 @@ import {
   LinkedinIcon,
 } from "@/components/ui/SocialIcons";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig, useSiteImages } from "@/lib/site-context";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -26,6 +26,8 @@ const navLinks = [
 ] as const;
 
 export function Header() {
+  const siteConfig = useSiteConfig();
+  const images = useSiteImages();
   const locale = useLocale();
   const t = useTranslations("nav");
   const pathname = usePathname();
@@ -137,7 +139,7 @@ export function Header() {
           <div className="mx-auto flex w-full min-w-0 max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:gap-4 md:px-6">
             <Link href="/" className="relative z-10 flex min-w-0 shrink items-center">
               <Image
-                src="/logo.png"
+                src={images.logo}
                 alt={`${siteConfig.name} Real Estate`}
                 width={240}
                 height={72}
@@ -208,7 +210,7 @@ export function Header() {
             >
               <div className="mb-8 flex items-center justify-between">
                 <Image
-                  src="/logo.png"
+                  src={images.logo}
                   alt={`${siteConfig.name} Real Estate`}
                   width={200}
                   height={60}

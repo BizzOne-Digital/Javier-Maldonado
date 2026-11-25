@@ -2,11 +2,12 @@
 
 import { useLocale } from "next-intl";
 import { Calendar, Phone } from "lucide-react";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { useLabels } from "@/lib/labels";
 import { Button } from "@/components/ui/Button";
 
 export function MobileCTA() {
+  const siteConfig = useSiteConfig();
   const locale = useLocale();
   const t = useLabels(locale as "en" | "es");
 

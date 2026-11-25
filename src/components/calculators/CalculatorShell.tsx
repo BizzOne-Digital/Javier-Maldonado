@@ -3,7 +3,7 @@
 import { type ReactNode } from "react";
 import { Printer, RotateCcw } from "lucide-react";
 import { useLocale } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { useLabels } from "@/lib/labels";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -27,6 +27,7 @@ export function CalculatorShell({
   onReset,
   className,
 }: CalculatorShellProps) {
+  const siteConfig = useSiteConfig();
   const locale = useLocale();
   const t = useLabels(locale as "en" | "es");
 

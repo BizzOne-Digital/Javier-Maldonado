@@ -16,13 +16,17 @@ interface Service {
   order: number;
   published: boolean;
   image?: string;
-  en?: { title?: string; description?: string };
+  en?: { title?: string; description?: string; content?: string };
+  es?: { title?: string; description?: string; content?: string };
 }
 
 const emptyForm = {
   title: "",
   description: "",
   content: "",
+  titleEs: "",
+  descriptionEs: "",
+  contentEs: "",
   icon: "",
   image: "",
   order: "0",
@@ -61,7 +65,10 @@ export default function AdminServicesPage() {
     setForm({
       title: service.en?.title || "",
       description: service.en?.description || "",
-      content: "",
+      content: service.en?.content || "",
+      titleEs: service.es?.title || "",
+      descriptionEs: service.es?.description || "",
+      contentEs: service.es?.content || "",
       icon: service.icon || "",
       image: service.image || "",
       order: String(service.order),
@@ -89,6 +96,11 @@ export default function AdminServicesPage() {
         title: form.title,
         description: form.description,
         content: form.content,
+      },
+      es: {
+        title: form.titleEs,
+        description: form.descriptionEs,
+        content: form.contentEs,
       },
     };
 
@@ -186,7 +198,19 @@ export default function AdminServicesPage() {
           </div>
           <div>
             <label className={labelClass}>Content (EN)</label>
-            <textarea className={inputClass} rows={4} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
+            <textarea className={inputClass} rows={6} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
+          </div>
+          <div>
+            <label className={labelClass}>Title (ES)</label>
+            <input className={inputClass} value={form.titleEs} onChange={(e) => setForm({ ...form, titleEs: e.target.value })} />
+          </div>
+          <div>
+            <label className={labelClass}>Description (ES)</label>
+            <textarea className={inputClass} rows={2} value={form.descriptionEs} onChange={(e) => setForm({ ...form, descriptionEs: e.target.value })} />
+          </div>
+          <div>
+            <label className={labelClass}>Content (ES)</label>
+            <textarea className={inputClass} rows={6} value={form.contentEs} onChange={(e) => setForm({ ...form, contentEs: e.target.value })} />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>

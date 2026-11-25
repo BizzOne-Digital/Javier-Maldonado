@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { ZodError } from "zod";
 
 export function apiSuccess<T>(data: T, status = 200) {
@@ -27,4 +28,9 @@ export function sanitizeInput(obj: Record<string, unknown>) {
     }
   }
   return sanitized;
+}
+
+/** Refresh every statically generated public page after an admin change. */
+export function revalidateSite() {
+  revalidatePath("/", "layout");
 }

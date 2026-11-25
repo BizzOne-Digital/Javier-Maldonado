@@ -12,7 +12,12 @@ import {
   Manrope,
 } from "next/font/google";
 import { routing } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import {
+  getContentOverrides,
+  getSiteConfig,
+  getSiteImages,
+} from "@/lib/site-content";
+import { SiteContextProvider } from "@/lib/site-context";
 import { Providers } from "@/components/providers/Providers";
 import { IntroGate } from "@/components/providers/IntroGate";
 import { Header } from "@/components/layout/Header";
@@ -51,6 +56,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const siteConfig = await getSiteConfig();
 
   return {
     title: {
@@ -89,13 +95,25 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const [siteConfig, images, overrides] = await Promise.all([
+    getSiteConfig(),
+    getSiteImages(),
+    getContentOverrides(),
+  ]);
+  const labelOverrides = { en: {}, es: {} } as Record<"en" | "es", Record<string, import("@/lib/site-content").OverrideValue>>;
+  for (const l of ["en", "es"] as const) {
+    for (const [k, v] of Object.entries(overrides[l])) {
+      if (k.startsWith("labels.")) labelOverrides[l][k.slice(7)] = v;
+    }
+  }
 
   return (
     <div
       className={`site-shell ${instrumentSerif.variable} ${manrope.variable} ${barlowCondensed.variable} flex min-h-full w-full max-w-full flex-col overflow-x-clip antialiased bg-ivory text-midnight`}
     >
       <NextIntlClientProvider messages={messages}>
-        <RealEstateAgentJsonLd />
+        <SiteContextProvider value={{ siteConfig, labelOverrides, images }}>
+        <RealEstateAgentJsonLd config={siteConfig} />
         <Providers>
           <IntroGate>
             <a href="#main" className="skip-link">
@@ -109,6 +127,7 @@ export default async function LocaleLayout({
             <MobileCTA />
           </IntroGate>
         </Providers>
+        </SiteContextProvider>
       </NextIntlClientProvider>
     </div>
   );

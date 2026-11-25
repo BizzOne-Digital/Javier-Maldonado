@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
+import { ContentImage as Image } from "@/components/ui/ContentImage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig, useSiteImages } from "@/lib/site-context";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { SkylineSvg } from "@/components/ui/SkylineSvg";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,8 @@ interface IntroExperienceProps {
 }
 
 export function IntroExperience({ onComplete }: IntroExperienceProps) {
+  const siteConfig = useSiteConfig();
+  const images = useSiteImages();
   const t = useTranslations("intro");
   const reducedMotion = useReducedMotion();
   const [visible, setVisible] = useState(true);
@@ -106,7 +108,7 @@ export function IntroExperience({ onComplete }: IntroExperienceProps) {
             >
               <div className="absolute -inset-10 rounded-full bg-gradient-to-r from-lake/25 via-copper/35 to-lake/25 blur-3xl" />
               <Image
-                src="/logo.png"
+                src={images.logo}
                 alt={`${siteConfig.name} Real Estate`}
                 width={360}
                 height={108}

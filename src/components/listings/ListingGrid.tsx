@@ -8,7 +8,6 @@ import type { Listing, ListingFiltersState } from "@/types/listing";
 import { useLabels } from "@/lib/labels";
 import { ListingCard } from "./ListingCard";
 import { ListingFilters } from "./ListingFilters";
-import { cn } from "@/lib/utils";
 
 interface ListingGridProps {
   listings: Listing[];

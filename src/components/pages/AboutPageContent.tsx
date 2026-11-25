@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
-import Image from "next/image";
+import { ContentImage as Image } from "@/components/ui/ContentImage";
 import { useTranslations } from "next-intl";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig, useSiteImages } from "@/lib/site-context";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,6 +12,8 @@ import { GradientCard } from "@/components/ui/GradientCard";
 import { Button } from "@/components/ui/Button";
 
 export function AboutPageContent() {
+  const siteConfig = useSiteConfig();
+  const images = useSiteImages();
   const t = useTranslations("pages.about");
   const values = t.raw("values") as string[];
 
@@ -39,13 +41,23 @@ export function AboutPageContent() {
               className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-midnight/10"
             >
               <div className="absolute inset-0 gradient-hero" />
-              <Image
-                src="/logo.png"
-                alt={siteConfig.name}
-                width={280}
-                height={280}
-                className="absolute inset-0 m-auto rounded-full border border-champagne/20"
-              />
+              {images.aboutImage ? (
+                <Image
+                  src={images.aboutImage}
+                  alt={siteConfig.name}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              ) : (
+                <Image
+                  src={images.logo}
+                  alt={siteConfig.name}
+                  width={280}
+                  height={280}
+                  className="absolute inset-0 m-auto rounded-full border border-champagne/20"
+                />
+              )}
             </motion.div>
           </div>
         </div>
@@ -61,7 +73,7 @@ export function AboutPageContent() {
             className="mb-12"
           />
           <div className="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
-            {values.map((value, i) => (
+            {values.map((value) => (
               <GradientCard key={value} tilt={false}>
                 <div className="flex items-start gap-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lake/15 text-lake">

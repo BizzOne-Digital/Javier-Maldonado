@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calculator, Home, Landmark, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { PageHero } from "@/components/ui/PageHero";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { GradientCard } from "@/components/ui/GradientCard";
@@ -18,6 +18,7 @@ const calculators = [
 ] as const;
 
 export function CalculatorsIndexContent() {
+  const siteConfig = useSiteConfig();
   const t = useTranslations("pages.calculators");
 
   return (

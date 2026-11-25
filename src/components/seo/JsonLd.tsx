@@ -1,6 +1,6 @@
-import { siteConfig } from "@/config/site";
+import type { SiteConfig } from "@/lib/site-content";
 
-export function RealEstateAgentJsonLd() {
+export function RealEstateAgentJsonLd({ config: siteConfig }: { config: SiteConfig }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",

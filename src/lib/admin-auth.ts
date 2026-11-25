@@ -1,6 +1,5 @@
 import { getAdminFromCookie } from "./auth";
 import { apiError } from "./api-utils";
-import { NextResponse } from "next/server";
 
 export async function requireAdmin() {
   const admin = await getAdminFromCookie();

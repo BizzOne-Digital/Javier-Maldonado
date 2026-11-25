@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from "react";
 import { Download, Search } from "lucide-react";
 import { adminFetch } from "@/lib/admin-fetch";
 import { DataTable } from "@/components/admin/DataTable";
-import { StatusBadge } from "@/components/admin/StatusBadge";
 import { inputClass, selectClass } from "@/components/admin/form-styles";
 
 interface Lead {

@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { teamMemberSchema } from "@/lib/validations";
 import TeamMember from "@/models/TeamMember";
 
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
 
     await connectDB();
     const member = await TeamMember.create(data);
+    revalidateSite();
     return apiSuccess(member, 201);
   } catch (error) {
     return handleApiError(error);

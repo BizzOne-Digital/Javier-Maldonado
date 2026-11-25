@@ -378,6 +378,16 @@
       "title": "Página No Encontrada",
       "subtitle": "La página que busca puede haberse movido o ya no existe.",
       "cta": "Volver al Inicio"
+    },
+    "services": {
+      "eyebrow": "Servicios",
+      "title": "Nuestros servicios",
+      "subtitle": "Todo lo que necesita para comprar, vender, alquilar o invertir con confianza.",
+      "metaTitle": "Servicios",
+      "metaDescription": "Servicios inmobiliarios en el GTA.",
+      "empty": "Próximamente.",
+      "cta": "Reservar consulta",
+      "back": "Todos los servicios"
     }
   }
 }

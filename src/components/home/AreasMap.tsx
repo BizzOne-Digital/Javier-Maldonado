@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 import { useRouter } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig } from "@/lib/site-context";
 import { useLabels } from "@/lib/labels";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
@@ -18,6 +18,7 @@ const cityPositions: Record<string, { cx: number; cy: number }> = {
 };
 
 export function AreasMap() {
+  const siteConfig = useSiteConfig();
   const locale = useLocale();
   const t = useLabels(locale as "en" | "es");
   const router = useRouter();

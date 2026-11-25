@@ -10,6 +10,7 @@ const staticPages = [
   "/sell",
   "/rent",
   "/invest",
+  "/services",
   "/listings",
   "/areas",
   "/calculators",

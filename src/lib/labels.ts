@@ -1,3 +1,5 @@
+import { useSiteContext } from "@/lib/site-context";
+
 type Locale = "en" | "es";
 
 type LabelTree = {
@@ -87,6 +89,19 @@ const en: LabelTree = {
     forLease: "For lease",
     sold: "Sold",
     noResults: "No listings match your filters.",
+  },
+  journey: {
+    title: "Four stages to your goal",
+    subtitle: "A guided path for buyers, sellers, and investors.",
+    learnMore: "Learn more",
+    discoverTitle: "Discover",
+    discoverDesc: "Explore neighbourhoods, market trends, and properties aligned with your lifestyle.",
+    planTitle: "Plan",
+    planDesc: "Use calculators and strategy sessions to understand costs and financing.",
+    executeTitle: "Execute",
+    executeDesc: "Negotiate, inspect, and close with a trusted advisor at every step.",
+    growTitle: "Grow",
+    growDesc: "Build wealth through investment properties and long-term portfolio planning.",
   },
   footer: {
     rights: "All rights reserved.",
@@ -178,13 +193,27 @@ const es: LabelTree = {
     sold: "Vendido",
     noResults: "No hay propiedades con estos filtros.",
   },
+  journey: {
+    title: "Cuatro etapas hacia su meta",
+    subtitle: "Un recorrido guiado para compradores, vendedores e inversionistas.",
+    learnMore: "Saber más",
+    discoverTitle: "Descubrir",
+    discoverDesc: "Explore vecindarios, tendencias del mercado y propiedades acordes a su estilo de vida.",
+    planTitle: "Planificar",
+    planDesc: "Use calculadoras y sesiones estratégicas para entender costos y financiamiento.",
+    executeTitle: "Ejecutar",
+    executeDesc: "Negocie, inspeccione y cierre con un asesor de confianza en cada paso.",
+    growTitle: "Crecer",
+    growDesc: "Construya patrimonio con propiedades de inversión y planificación a largo plazo.",
+  },
   footer: {
     rights: "Todos los derechos reservados.",
     brokerage: "Correduría",
   },
 };
 
-const trees: Record<Locale, LabelTree> = { en, es };
+export const labelTrees: Record<Locale, LabelTree> = { en, es };
+const trees = labelTrees;
 
 function getPath(tree: LabelTree, path: string): string {
   const parts = path.split(".");
@@ -198,5 +227,10 @@ function getPath(tree: LabelTree, path: string): string {
 
 export function useLabels(locale: Locale) {
   const tree = trees[locale] ?? trees.en;
-  return (key: string) => getPath(tree, key);
+  const { labelOverrides } = useSiteContext();
+  const overrides = labelOverrides[locale] ?? {};
+  return (key: string) => {
+    const o = overrides[key];
+    return typeof o === "string" && o ? o : getPath(tree, key);
+  };
 }

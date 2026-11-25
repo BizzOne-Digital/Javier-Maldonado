@@ -378,6 +378,16 @@
       "title": "Page Not Found",
       "subtitle": "The page you are looking for may have moved or no longer exists.",
       "cta": "Return Home"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Our Services",
+      "subtitle": "Everything you need to buy, sell, rent or invest with confidence.",
+      "metaTitle": "Services",
+      "metaDescription": "Real estate services across the GTA.",
+      "empty": "Services are coming soon.",
+      "cta": "Book a Consultation",
+      "back": "All Services"
     }
   }
 }

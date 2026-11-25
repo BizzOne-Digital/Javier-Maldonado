@@ -4,6 +4,7 @@ import BlogPost from "@/models/BlogPost";
 import Testimonial from "@/models/Testimonial";
 import TeamMember from "@/models/TeamMember";
 import Resource from "@/models/Resource";
+import Service from "@/models/Service";
 import type { Listing as ListingType } from "@/types/listing";
 
 export async function getPublishedListings(limit = 100) {
@@ -89,5 +90,38 @@ export async function getPublishedResources() {
     return JSON.parse(JSON.stringify(resources));
   } catch {
     return [];
+  }
+}
+
+export interface ServiceItem {
+  _id: string;
+  slug: string;
+  icon?: string;
+  image?: string;
+  order: number;
+  en: { title?: string; description?: string; content?: string };
+  es: { title?: string; description?: string; content?: string };
+}
+
+export async function getPublishedServices() {
+  try {
+    await connectDB();
+    const services = await Service.find({ published: true })
+      .sort({ order: 1, createdAt: -1 })
+      .lean();
+    return JSON.parse(JSON.stringify(services)) as ServiceItem[];
+  } catch {
+    return [] as ServiceItem[];
+  }
+}
+
+export async function getServiceBySlug(slug: string) {
+  try {
+    await connectDB();
+    const service = await Service.findOne({ slug, published: true }).lean();
+    if (!service) return null;
+    return JSON.parse(JSON.stringify(service)) as ServiceItem;
+  } catch {
+    return null;
   }
 }

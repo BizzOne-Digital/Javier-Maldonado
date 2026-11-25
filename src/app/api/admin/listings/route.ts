@@ -1,7 +1,7 @@
 import slugify from "slugify";
 import { connectDB } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
-import { apiSuccess, apiError, handleApiError, sanitizeInput } from "@/lib/api-utils";
+import { apiSuccess, apiError, handleApiError, sanitizeInput, revalidateSite } from "@/lib/api-utils";
 import { listingCreateSchema } from "@/lib/validations";
 import Listing from "@/models/Listing";
 
@@ -50,6 +50,7 @@ export async function POST(req: Request) {
 
     const listing = new Listing({ ...data, slug });
     await listing.save();
+    revalidateSite();
     return apiSuccess(listing, 201);
   } catch (error) {
     return handleApiError(error);

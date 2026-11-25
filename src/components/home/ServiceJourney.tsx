@@ -12,50 +12,10 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { cn } from "@/lib/utils";
 
 const panels = [
-  {
-    id: "discover",
-    icon: Home,
-    titleEn: "Discover",
-    titleEs: "Descubrir",
-    descEn: "Explore neighbourhoods, market trends, and properties aligned with your lifestyle.",
-    descEs: "Explore vecindarios, tendencias del mercado y propiedades acordes a su estilo de vida.",
-    stat: 1,
-    suffix: "",
-    href: "/services/buying",
-  },
-  {
-    id: "plan",
-    icon: LineChart,
-    titleEn: "Plan",
-    titleEs: "Planificar",
-    descEn: "Use calculators and strategy sessions to understand costs and financing.",
-    descEs: "Use calculadoras y sesiones estratégicas para entender costos y financiamiento.",
-    stat: 4,
-    suffix: "+",
-    href: "/calculators/mortgage",
-  },
-  {
-    id: "execute",
-    icon: Key,
-    titleEn: "Execute",
-    titleEs: "Ejecutar",
-    descEn: "Negotiate, inspect, and close with a trusted advisor at every step.",
-    descEs: "Negocie, inspeccione y cierre con un asesor de confianza en cada paso.",
-    stat: 3,
-    suffix: "",
-    href: "/services/selling",
-  },
-  {
-    id: "grow",
-    icon: Users,
-    titleEn: "Grow",
-    titleEs: "Crecer",
-    descEn: "Build wealth through investment properties and long-term portfolio planning.",
-    descEs: "Construya patrimonio con propiedades de inversión y planificación a largo plazo.",
-    stat: 5,
-    suffix: "",
-    href: "/services/investing",
-  },
+  { id: "discover", icon: Home, stat: 1, suffix: "", href: "/buy" },
+  { id: "plan", icon: LineChart, stat: 4, suffix: "+", href: "/calculators/mortgage" },
+  { id: "execute", icon: Key, stat: 3, suffix: "", href: "/sell" },
+  { id: "grow", icon: Users, stat: 5, suffix: "", href: "/invest" },
 ] as const;
 
 export function ServiceJourney() {
@@ -70,12 +30,8 @@ export function ServiceJourney() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <SectionHeading
           eyebrow={t("home.serviceJourney")}
-          title={locale === "es" ? "Cuatro etapas hacia su meta" : "Four stages to your goal"}
-          subtitle={
-            locale === "es"
-              ? "Un recorrido guiado para compradores, vendedores e inversionistas."
-              : "A guided path for buyers, sellers, and investors."
-          }
+          title={t("journey.title")}
+          subtitle={t("journey.subtitle")}
           singleLine
           className="mb-16"
         />
@@ -108,11 +64,11 @@ export function ServiceJourney() {
                     </div>
                     <div>
                       <p className="font-display text-xl text-midnight">
-                        {locale === "es" ? p.titleEs : p.titleEn}
+                        {t(`journey.${p.id}Title`)}
                       </p>
                       {!isActive && (
                         <p className="text-sm text-slate/60 line-clamp-1">
-                          {locale === "es" ? p.descEs : p.descEn}
+                          {t(`journey.${p.id}Desc`)}
                         </p>
                       )}
                     </div>
@@ -137,16 +93,16 @@ export function ServiceJourney() {
                   <AnimatedCounter value={panel.stat} suffix={panel.suffix} />
                 </p>
                 <h3 className="font-display text-3xl text-ivory mb-4">
-                  {locale === "es" ? panel.titleEs : panel.titleEn}
+                  {t(`journey.${panel.id}Title`)}
                 </h3>
                 <p className="text-champagne/80 leading-relaxed mb-8 max-w-md">
-                  {locale === "es" ? panel.descEs : panel.descEn}
+                  {t(`journey.${panel.id}Desc`)}
                 </p>
                 <Link
                   href={panel.href}
                   className="inline-flex items-center gap-2 text-copper hover:text-champagne transition-colors font-label uppercase tracking-wider text-sm"
                 >
-                  {locale === "es" ? "Saber más" : "Learn more"}
+                  {t("journey.learnMore")}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { ContentImage as Image } from "@/components/ui/ContentImage";
 import { useLocale } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 import {
@@ -9,10 +9,11 @@ import {
   LinkedinIcon,
 } from "@/components/ui/SocialIcons";
 import { Link } from "@/i18n/routing";
-import { siteConfig } from "@/config/site";
+import { useSiteConfig, useSiteImages } from "@/lib/site-context";
 import { useLabels } from "@/lib/labels";
 
 const footerLinks = [
+  { href: "/services", labelKey: "nav.services" },
   { href: "/listings", labelKey: "nav.listings" },
   { href: "/buy", labelKey: "services.buying" },
   { href: "/sell", labelKey: "services.selling" },
@@ -23,6 +24,8 @@ const footerLinks = [
 ] as const;
 
 export function Footer() {
+  const siteConfig = useSiteConfig();
+  const images = useSiteImages();
   const locale = useLocale();
   const t = useLabels(locale as "en" | "es");
   const year = new Date().getFullYear();
@@ -37,7 +40,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo.png"
+                src={images.logo}
                 alt={`${siteConfig.name} Real Estate`}
                 width={240}
                 height={72}
