@@ -13,6 +13,7 @@ import {
 } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import {
+  applyOverrides,
   getContentOverrides,
   getSiteConfig,
   getSiteImages,
@@ -94,12 +95,16 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const baseMessages = await getMessages();
   const [siteConfig, images, overrides] = await Promise.all([
     getSiteConfig(),
     getSiteImages(),
     getContentOverrides(),
   ]);
+  const messages = applyOverrides(
+    baseMessages as unknown as Record<string, unknown>,
+    overrides[locale as "en" | "es"]
+  ) as unknown as typeof baseMessages;
   const labelOverrides = { en: {}, es: {} } as Record<"en" | "es", Record<string, import("@/lib/site-content").OverrideValue>>;
   for (const l of ["en", "es"] as const) {
     for (const [k, v] of Object.entries(overrides[l])) {
